@@ -15,9 +15,9 @@ require(foreign)
 ## 1. Get the list of search strings from the csv file “names”.
 
 ss<-read.csv("YOURPATH/names.csv",header=TRUE, sep=",", stringsAsFactors=TRUE)
-brands<-unlist(ss[,2,drop=FALSE])
-brandsN<-unlist(ss[,1,drop=FALSE])
-brandsN<-gsub("%20","",brandsN)
+kywrds<-unlist(ss[,2,drop=FALSE])
+kywrdsN<-unlist(ss[,1,drop=FALSE])
+kywrdsN<-gsub("%20","",kywrdsN)
 
 ## 2. Initialise the URL format for Google Trends series exports. The 
 ## endUrl is designed in such a way that it retrieves Google Trends 
@@ -46,7 +46,7 @@ else
  {rm(bdata,bdata2,cdata,adata)} 
 cat(i); 		
 ## combine the URL together
-finalUrls <- paste0(initialUrl, brands[i], endUrl)
+finalUrls <- paste0(initialUrl, kywrds[i], endUrl)
 cat(finalUrls);
 ## download data from Google Trends
 browseURL(finalUrls,encodeIfNeeded = FALSE)
@@ -60,7 +60,7 @@ adata<-read.csv2("YOURPATH/report.csv",header = FALSE ,sep = ",")
 if(i==1)
  tryCatch({if(nrow(adata)>500)
 		    	{bdata<-adata[5:474,]
-				 colnames(bdata)<-c("week", brandsN[i]) 
+				 colnames(bdata)<-c("week", kywrdsN[i]) 
   	 			}
   			else{ print(nrow(adata));
   	    		  cat(i); 
@@ -70,7 +70,7 @@ if(i==1)
 else
  tryCatch({if(nrow(adata)>500)
  				{cdata<-adata[5:474,]
-			     colnames(cdata)<-c("week", brandsN[i]) 		
+			     colnames(cdata)<-c("week", kywrdsN[i]) 		
  				 bdata<-merge(bdata,cdata,by=c("week"))
  				}
    			   else{ print(nrow(adata));
