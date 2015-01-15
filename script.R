@@ -1,3 +1,7 @@
+## If you use this code please cite Georg v Graevenitz, Christian Helmers and
+## Valentine Millot in any papers you produce. Emails to g.v.graevenitz "at"
+## qmul.ac.uk .
+
 ## This code is designed to retrieve Google Trends weekly data for a list 
 ## of keywords of interest using the R package. The initial input is a csv file 
 ## containing two columns: “id”, which contains an identifier, and “names”, which 
