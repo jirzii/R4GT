@@ -1,7 +1,7 @@
 ## This code is designed to retrieve Google Trends weekly data for a list 
-## of keywords of interest. The initial input is a csv file containing two 
-## columns: “id”, which contains an identifier, and “names”, which contains 
-## the keywords to search for. The final output is a STATA table with the 
+## of keywords of interest using the R package. The initial input is a csv file 
+## containing two columns: “id”, which contains an identifier, and “names”, which 
+## contains the keywords to search for. The final output is a STATA table with the 
 ## merged weekly series, each named from the corresponding id. A similar 
 ## code may be used to retrieve series only available at the monthly level.
 ## Note that the site does not warn you before whether data are available weekly 
