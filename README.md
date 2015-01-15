@@ -1,5 +1,5 @@
 # R4GT
-R script to download data from google trends
+R script to download data from google trends.
 
 To use a version of this script you will need to have an account for Google and you will need to log on to the Google Trends site.
 
